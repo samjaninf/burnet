@@ -11,9 +11,9 @@
   "license": "MIT",
   "repository": {},
   "author": {
-    "name" : "Feliciano Santana",
-    "email" : "fsfelicianosantana@gmail.com",
-    "url" : "thenameisflic.com"
+    "name": "Feliciano Santana",
+    "email": "fsfelicianosantana@gmail.com",
+    "url": "thenameisflic.com"
   },
   "contributors": [],
   "bugs": {},
@@ -35,6 +35,7 @@
     "feathers-configuration": "^0.2.3",
     "feathers-errors": "^2.4.0",
     "feathers-hooks": "^1.5.7",
+    "feathers-hooks-common": "^1.5.2",
     "feathers-nedb": "^2.4.1",
     "feathers-rest": "^1.5.0",
     "feathers-socketio": "^1.4.1",
