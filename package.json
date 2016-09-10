@@ -23,7 +23,7 @@
   "scripts": {
     "test": "npm run lint && npm run mocha",
     "lint": "./node_modules/.bin/eslint src/. test/.",
-    "start": "node src/",
+    "start": "./node_modules/nodemon/bin/nodemon.js src/",
     "mocha": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --recursive"
   },
   "dependencies": {
@@ -41,6 +41,7 @@
     "feathers-socketio": "^1.4.1",
     "nedb": "^1.8.0",
     "passport": "^0.3.2",
+    "pug": "^0.1.0",
     "serve-favicon": "^2.3.0",
     "winston": "^2.2.0"
   },
@@ -50,6 +51,7 @@
     "eslint-config-google": "^0.6.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.0.2",
+    "nodemon": "^1.10.2",
     "request": "^2.74.0",
     "sinon": "^1.17.5",
     "sinon-chai": "^2.8.0"
