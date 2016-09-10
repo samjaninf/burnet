@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 const request = require('request');
-const app = require('../src/app');
+const app = require('../../src/api');
 
 describe('Feathers application tests', function() {
   before(function(done) {
@@ -12,13 +12,6 @@ describe('Feathers application tests', function() {
 
   after(function(done) {
     this.server.close(done);
-  });
-
-  it('starts and shows the index page', function(done) {
-    request('http://localhost:3030', function(err, res, body) {
-      assert.ok(body.indexOf('<html>') !== -1);
-      done(err);
-    });
   });
 
   describe('404', function() {

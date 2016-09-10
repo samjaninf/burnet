@@ -20,7 +20,7 @@ describe('Logger tests', () => {
   beforeEach(() => {
     app = {};
     // We pass an empty object since logger.js sets winston into it
-    logger = require('../../src/middleware/logger.js')(app);
+    logger = require('../../../src/api/middleware/logger.js')(app);
     infoSpy = sinon.spy(app.logger, 'info');
     errorSpy = sinon.spy(app.logger, 'error');
   });
