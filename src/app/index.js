@@ -14,7 +14,7 @@ if (app.get('env') === 'development') {
 
 app.use('/static', express.static(path.join(__dirname, '../../static')));
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   api.service('products').find({
     query: {
       $limit: 5,
@@ -26,10 +26,20 @@ app.get('/', function(req, res) {
       }
     }
   }).then(products => {
-    res.render('index', {
+    res.render('home/home', {
       title: appData.title,
       products: products.data
     });
+  });
+});
+
+app.get('/*', (req, res) => {
+  res.render('user/user-view', {
+    user: {
+      name: 'Ozymas',
+      image: 'static/img/square-1.jpg',
+      createdAt: '2016-08-11T01:39:09Z'
+    }
   });
 });
 
