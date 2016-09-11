@@ -46,6 +46,10 @@ For more information on all the things you can do with Feathers visit [docs.feat
 
 ## Changelog
 
+__0.3.0__
+
+- Vue.js support
+
 __0.2.0__
 
 - Experimental livereload support with Webpack and Livereload.

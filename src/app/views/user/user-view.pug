@@ -2,29 +2,33 @@ extends ../layout.pug
 
 block content
   // Desktop
-  .row.mt-30.hide-on-mobile
-    .col-1-2
-      img(src=user.image)
-    .col-1-2
-      .row
-        .col
-          h1= user.name
-      .row
-        .col
-          h5.mt-0 #{__('member since')} #{user.memberSince}
-      .row
-        .col
-          p= user.description
-      .row.mt-15
-        .col
-          span
-            i.fa.fa-gift
-            span.ml-1 3 #{__('products')}
-      .row
-        .col
-          span
-            i.fa.fa-comment
-            span.ml-1 n #{__('comments')}
+  .hide-on-mobile
+    .row.mt-30
+      .col-1-2
+        img(src=user.image)
+      .col-1-2
+        .row
+          .col
+            h1= user.name
+        .row
+          .col
+            h5.mt-0 #{__('member since')} #{user.memberSince}
+        .row
+          .col
+            p= user.description
+        .row.mt-15
+          .col
+            span
+              i.fa.fa-gift
+              span.ml-1 3 #{__('products')}
+        .row
+          .col
+            span
+              i.fa.fa-comment
+              span.ml-1 n #{__('comments')}
+    .row.mt-30
+      .col
+        product-grid
   // Mobile
   .show-on-mobile
     .row.mt-30.flex-center

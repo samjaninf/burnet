@@ -26,6 +26,21 @@ config.module.loaders.push({
 }, {
   test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
   loader: "file-loader"
+}, {
+  test: /\.vue$/,
+  loader: 'vue'
+},
+{
+  test: /\.js$/,
+  loader: 'babel',
+  exclude: /node_modules/
+},
+{
+  test: /\.(png|jpg|gif|svg)$/,
+  loader: 'file',
+  query: {
+    name: '[name].[ext]?[hash]'
+  }
 });
 
 config.plugins.push(
