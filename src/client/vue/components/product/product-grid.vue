@@ -28,9 +28,10 @@
     },
 
     created() {
-      let marginLeft = `${2 / this.perRow}%`;
-      let marginRight = `${2 / this.perRow}%`;
-      let maxWidth = 96 / this.perRow + '%';
+      const marginWidth =  100 - config.GRID_CONTENT_WIDTH;
+      const marginLeft = `${(marginWidth / 2) / this.perRow}%`;
+      const marginRight = `${(marginWidth / 2) / this.perRow}%`;
+      const maxWidth = config.GRID_CONTENT_WIDTH / this.perRow + '%';
 
       this.gridItemStyle = {
         marginLeft,
