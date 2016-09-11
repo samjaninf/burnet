@@ -41,13 +41,18 @@ app.get('/', (req, res) => {
   });
 });
 
-app.get('/*', (req, res) => {
+app.get('/*', (req, res, next) => {
+  if (req.path.includes('/api/'))
+    return next();
+  // Loads user products
   res.render('user/user-view', {
     user: {
       name: 'Ozymas',
       image: 'static/img/square-1.jpg',
       memberSince: moment('2016-08-11T01:39:09Z').locale(req.getLocale()).fromNow(),
-      description: 'The longing you seek is not behind you, it is in front of you.'
+      description: 'The longing you seek is not behind you, it is in front of you.',
+      productTotal: 3,
+      commentTotal: 15
     }
   });
 });
