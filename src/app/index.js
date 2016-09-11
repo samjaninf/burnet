@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const setupLiveReload = require('./middlewares/setup-live-reload.js');
 const app = express();
+const api = require('../api');
 const appData = require('../../config/application.json');
 
 app.set('views', path.join(__dirname, 'views'));
@@ -14,8 +15,21 @@ if (app.get('env') === 'development') {
 app.use('/static', express.static(path.join(__dirname, '../../static')));
 
 app.get('/', function(req, res) {
-  res.render('index', {
-    title: appData.title
+  api.service('products').find({
+    query: {
+      $limit: 5,
+      featuredIndex: {
+        $gte: 0
+      },
+      $sort: {
+        featuredIndex: -1
+      }
+    }
+  }).then(products => {
+    res.render('index', {
+      title: appData.title,
+      products: products.data
+    });
   });
 });
 
