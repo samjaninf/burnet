@@ -1,7 +1,9 @@
 const express = require('express');
 const path = require('path');
-const setupLiveReload = require('./middlewares/setup-live-reload.js');
+const i18n = require('i18n');
+const moment = require('moment');
 const app = express();
+const setupLiveReload = require('./middlewares/setup-live-reload.js');
 const api = require('../api');
 const appData = require('../../config/application.json');
 
@@ -12,6 +14,13 @@ if (app.get('env') === 'development') {
   setupLiveReload(app);
 }
 
+i18n.configure({
+  locales: ['en', 'pt-BR'],
+  defaultLocale: appData.defaultLocale,
+  directory: path.join(__dirname, '/locales')
+});
+
+app.use(i18n.init);
 app.use('/static', express.static(path.join(__dirname, '../../static')));
 
 app.get('/', (req, res) => {
@@ -27,7 +36,6 @@ app.get('/', (req, res) => {
     }
   }).then(products => {
     res.render('home/home', {
-      title: appData.title,
       products: products.data
     });
   });
@@ -38,7 +46,8 @@ app.get('/*', (req, res) => {
     user: {
       name: 'Ozymas',
       image: 'static/img/square-1.jpg',
-      createdAt: '2016-08-11T01:39:09Z'
+      memberSince: moment('2016-08-11T01:39:09Z').locale(req.getLocale()).fromNow(),
+      description: 'The longing you seek is not behind you, it is in front of you.'
     }
   });
 });
