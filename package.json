@@ -1,7 +1,7 @@
 {
   "name": "burnet",
   "description": "The modern and open-source Node.js marketplace.",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "homepage": "",
   "main": "src/",
   "keywords": [
