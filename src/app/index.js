@@ -11,6 +11,8 @@ if (app.get('env') === 'development') {
   setupLiveReload(app);
 }
 
+app.use('/static', express.static(path.join(__dirname, '../../static')));
+
 app.get('/', function(req, res) {
   res.render('index', {
     title: appData.title

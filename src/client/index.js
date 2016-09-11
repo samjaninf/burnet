@@ -3,4 +3,4 @@ if (module.hot) {
   module.hot.accept();
 }
 
-require('./css/index.css');
+require('./scss/index.scss');

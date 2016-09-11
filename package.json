@@ -43,8 +43,10 @@
     "feathers-socketio": "^1.4.1",
     "mobi.css": "^0.4.1",
     "nedb": "^1.8.0",
+    "node-sass": "^3.9.3",
     "passport": "^0.3.2",
     "pug": "^0.1.0",
+    "sass-loader": "^4.0.2",
     "serve-favicon": "^2.3.0",
     "winston": "^2.2.0"
   },
