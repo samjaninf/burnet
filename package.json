@@ -25,7 +25,7 @@
     "lint": "./node_modules/.bin/eslint src/. test/.",
     "start": "concurrently --kill-others 'npm run server-watch' 'npm run live-reload'",
     "server-watch": "./node_modules/nodemon/bin/nodemon.js src/",
-    "live-reload": "live-reload --port 9091 src/",
+    "live-reload": "live-reload --port 9091 src/app/ src/api/",
     "mocha": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --recursive"
   },
   "dependencies": {

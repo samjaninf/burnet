@@ -28,7 +28,7 @@ block content
               span.ml-1 n #{__('comments')}
     .row.mt-30
       .col
-        product-grid
+        product-grid(class='', :per-row='3')
   // Mobile
   .show-on-mobile
     .row.mt-30.flex-center
@@ -51,3 +51,5 @@ block content
           span
             i.fa.fa-comment
             span.ml-1 #{user.commentTotal} #{__('comments')}
+    .row
+      product-grid(class='', :per-row='2')
