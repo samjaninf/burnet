@@ -1,9 +1,9 @@
 'use strict';
 
-const setUserId = require('./set-user-id.js');
-
 const auth = require('feathers-authentication').hooks;
-const commonHooks = require('feathers-hooks-common');
+
+const setUserId = require('./set-user-id.js');
+const setSlug = require('./set-slug.js');
 
 exports.before = {
   all: [],
@@ -13,12 +13,10 @@ exports.before = {
     auth.verifyToken(),
     auth.populateUser(),
     auth.restrictToAuthenticated(),
-    commonHooks.setCreatedAt('createdAt'),
-    setUserId()
+    setUserId(),
+    setSlug()
   ],
-  update: [
-    commonHooks.setUpdatedAt('updatedAt')
-  ],
+  update: [],
   patch: [],
   remove: []
 };

@@ -2,8 +2,10 @@
   "host": "localhost",
   "port": 3030,
   "nedb": "../data/",
+  "mysql": "mysql://root:@localhost:3306/burnet",
   "public": "../public/",
   "auth": {
+    "idField": "id",
     "token": {
       "secret": "QDK5AVhAKEYDYrQpRx0Q80lJCVnJpWc23OSnfGGVYZKOt4LXnT1OkpwrRDnGIE5elhxZyZadYlJZLsUNKarMKg=="
     },

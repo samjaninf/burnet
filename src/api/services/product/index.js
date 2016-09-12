@@ -1,20 +1,14 @@
 'use strict';
 
-const path = require('path');
-const NeDB = require('nedb');
-const service = require('feathers-nedb');
+const service = require('feathers-sequelize');
+const post = require('./product-model');
 const hooks = require('./hooks');
 
-module.exports = function() {
+module.exports = function(){
   const app = this;
 
-  const db = new NeDB({
-    filename: path.join(app.get('nedb'), 'products.db'),
-    autoload: true
-  });
-
-  let options = {
-    Model: db,
+  const options = {
+    Model: post(app.get('sequelize')),
     paginate: {
       default: 5,
       max: 25
@@ -25,11 +19,11 @@ module.exports = function() {
   app.use('/products', service(options));
 
   // Get our initialize service to that we can bind hooks
-  const productService = app.service('/products');
+  const postService = app.service('/products');
 
   // Set up our before hooks
-  productService.before(hooks.before);
+  postService.before(hooks.before);
 
   // Set up our after hooks
-  productService.after(hooks.after);
+  postService.after(hooks.after);
 };

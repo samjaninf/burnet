@@ -15,7 +15,7 @@ exports.before = {
     auth.populateUser(),
     auth.restrictToAuthenticated(),
     auth.restrictToOwner({
-      ownerField: '_id'
+      ownerField: 'id'
     })
   ],
   create: [
@@ -26,7 +26,7 @@ exports.before = {
     auth.populateUser(),
     auth.restrictToAuthenticated(),
     auth.restrictToOwner({
-      ownerField: '_id'
+      ownerField: 'id'
     })
   ],
   patch: [
@@ -34,7 +34,7 @@ exports.before = {
     auth.populateUser(),
     auth.restrictToAuthenticated(),
     auth.restrictToOwner({
-      ownerField: '_id'
+      ownerField: 'id'
     })
   ],
   remove: [
@@ -42,7 +42,7 @@ exports.before = {
     auth.populateUser(),
     auth.restrictToAuthenticated(),
     auth.restrictToOwner({
-      ownerField: '_id'
+      ownerField: 'id'
     })
   ]
 };
