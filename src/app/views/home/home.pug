@@ -4,19 +4,19 @@ block content
   section.row.mt-30
     .col.col-1-2
       a(href='javascript:void')
-        img(src=products[0].image)
+        img(src=products[0] ? products[0].image : 'static/img/square-1.jpg')
     .col.col-1-2
       .row
         .col.col-1-2
           a(href='javascript:void')
-            img(src=products[1].image)
+            img(src=products[1] ? products[1].image : 'static/img/square-1.jpg')
         .col.col-1-2
           a(href='javascript:void')
-            img(src=products[2].image)
+            img(src=products[2] ? products[2].image : 'static/img/square-1.jpg')
       .row.mt-13
         .col.col-1-2
           a(href='javascript:void')
-            img(src=products[3].image)
+            img(src=products[3] ? products[3].image : 'static/img/square-1.jpg')
         .col.col-1-2
           a(href='javascript:void')
-            img(src=products[4].image)
+            img(src=products[4] ? products[4].image : 'static/img/square-1.jpg')
