@@ -10,7 +10,7 @@ module.exports = {
         "google": true
     },
     "rules": {
-        'max-len': [1, 110, 4, {
+        "max-len": [1, 110, 4, {
             ignoreComments: true,
             ignoreUrls: true
         }],
@@ -28,7 +28,8 @@ module.exports = {
         ],
         "no-console": 0,
         "no-unused-expressions": 0,
-        "no-new": 0
+        "no-new": 0,
+        "new-cap": 0
     },
     "env": {
         "browser": true,

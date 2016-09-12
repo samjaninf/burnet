@@ -54,9 +54,9 @@ app.get('/*', (req, res, next) => {
   .then(page => {
     if (page.total > 0) {
       const user = page.data[0];
-      const promises = [api.service('products').find({query:{userId: user.id}})];
+      const promises = [api.service('products').find({query: {userId: user.id}})];
       Promise.all(promises)
-      .then((responses) => {
+      .then(responses => {
         const productTotal = responses[0].total;
         res.render('user/user-view', {
           user: {

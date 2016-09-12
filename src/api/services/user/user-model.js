@@ -7,24 +7,24 @@
 const Sequelize = require('sequelize');
 
 module.exports = function(sequelize) {
-	const user = sequelize.define('users', {
-		facebookId: {
-			type: Sequelize.STRING,
-			allowNull: true
-		},
-		googleId: {
-			type: Sequelize.STRING,
-			allowNull: true
-		},
-		email: {
-			type: Sequelize.STRING,
-			allowNull: false,
-			unique: true
-		},
-		password: {
-			type: Sequelize.STRING,
-			allowNull: false
-		},
+  const user = sequelize.define('users', {
+    facebookId: {
+      type: Sequelize.STRING,
+      allowNull: true
+    },
+    googleId: {
+      type: Sequelize.STRING,
+      allowNull: true
+    },
+    email: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      unique: true
+    },
+    password: {
+      type: Sequelize.STRING,
+      allowNull: false
+    },
     handle: {
       type: Sequelize.STRING,
       allowNull: false
@@ -40,14 +40,14 @@ module.exports = function(sequelize) {
     image: {
       type: Sequelize.STRING
     }
-	}, {
-		freezeTableName: true,
+  }, {
+    freezeTableName: true,
     classMethods: {
       associate(models) {
         user.hasMany(models.products);
-      },
-    },
-	});
+      }
+    }
+  });
 
-	return user;
+  return user;
 };
