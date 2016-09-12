@@ -44,16 +44,36 @@ app.get('/', (req, res) => {
 app.get('/*', (req, res, next) => {
   if (req.path.includes('/api/'))
     return next();
-  // Loads user products
-  res.render('user/user-view', {
-    user: {
-      name: 'Ozymas',
-      image: 'static/img/square-1.jpg',
-      memberSince: moment('2016-08-11T01:39:09Z').locale(req.getLocale()).fromNow(),
-      description: 'The longing you seek is not behind you, it is in front of you.',
-      productTotal: 3,
-      commentTotal: 15
+  // loads a user with given handle
+  const handle = req.path.substring(1);
+  api.service('users').find({
+    query: {
+      handle
     }
+  })
+  .then(page => {
+    if (page.total > 0) {
+      const user = page.data[0];
+      const promises = [api.service('products').find({query:{userId: user.id}})];
+      Promise.all(promises)
+      .then((responses) => {
+        const productTotal = responses[0].total;
+        res.render('user/user-view', {
+          user: {
+            id: user.id,
+            name: user.name,
+            image: user.image,
+            memberSince: moment(user.createdAt).locale(req.getLocale()).fromNow(),
+            description: user.description,
+            productTotal,
+            commentTotal: 15
+          }
+        });
+      });
+    } else return next();
+  })
+  .catch(err => {
+    res.sendStatus(500);
   });
 });
 

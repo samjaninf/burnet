@@ -6,7 +6,7 @@ module.exports = options => {
   return hook => {
     const now = new Date();
 
-    let generatedSlug = slug(hook.data.name);
+    let generatedSlug = slug(hook.data.name).toLowerCase();
     generatedSlug += `-${now.getTime()}`;
 
     // TODO: make sure slug is unique

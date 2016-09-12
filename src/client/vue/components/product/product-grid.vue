@@ -16,6 +16,9 @@
       perRow: {
         type: Number,
         default: 3
+      },
+      userId: {
+        type: Number
       }
     },
 
@@ -39,7 +42,12 @@
         maxWidth
       }
 
+      const query = {};
+      if (this.userId)
+        query.userId = this.userId;
+
       productService.find({
+        query,
         $limit: config.PAGE_SIZE
       })
       .then(page => {

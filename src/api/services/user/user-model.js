@@ -32,6 +32,13 @@ module.exports = function(sequelize) {
     name: {
       type: Sequelize.STRING,
       allowNull: false
+    },
+    description: {
+      type: Sequelize.STRING(1024),
+      allowNull: false
+    },
+    image: {
+      type: Sequelize.STRING
     }
 	}, {
 		freezeTableName: true,
