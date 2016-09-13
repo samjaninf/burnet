@@ -3,6 +3,7 @@ module.exports = {
     SOCKET_HOST: 'http://localhost:3030/'
   },
   SERVICES: {
-    PRODUCTS: 'api/products'
+    PRODUCTS: 'api/products',
+    POSTS: 'api/posts'
   }
 };

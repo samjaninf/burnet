@@ -1,20 +1,41 @@
 <template lang="pug">
   .post-list
-    post-list-item(class='', :name='name', :createdAt='createdAt', :content='content')
+    post-list-item(v-for='post in posts' class='', :name='name', :createdAt='post.createdAt', :content='post.content')
 </template>
 <script>
 const postListItem = require('./post-list-item.vue');
+
+const constants = require('../../config/constants.config');
+const app = require('../../feathers-client');
+const postService = app.service(constants.SERVICES.POSTS);
+
 module.exports = {
+  props: {
+    name: {
+      type: String,
+      required: true
+    }
+  },
+
   data() {
     return {
-      name: 'flic',
-      createdAt: '2016-08-16',
-      content: 'This work looks amazing, i really wish i had the money for it right now :/'
+      posts: []
     }
   },
 
   components: {
     'post-list-item': postListItem
+  },
+
+  created() {
+    postService.find({
+      query: {
+
+      }
+    })
+    .then(resp => {
+      this.posts = resp.data;
+    });
   }
 }
 </script>

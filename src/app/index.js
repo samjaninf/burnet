@@ -65,6 +65,7 @@ app.get('/*', (req, res, next) => {
             id: user.id,
             name: user.name,
             image: user.image,
+            handle: user.handle,
             memberSince: moment(user.createdAt).locale(req.getLocale()).fromNow(),
             description: user.description,
             productTotal,
