@@ -28,6 +28,9 @@ block content
               span.ml-1 #{user.postTotal} #{__('posts')}
     .row.mt-30
       .col
+        post-list
+    .row.mt-30
+      .col
         product-grid(class='', :per-row='3', :user-id=user.id)
   // Mobile
   .show-on-mobile
@@ -51,5 +54,8 @@ block content
           span
             i.fa.fa-comment
             span.ml-1 #{user.postTotal} #{__('posts')}
+    .row.mt-30
+      .col
+        post-list
     .row
       product-grid(class='', :per-row='2', :user-id=user.id)
