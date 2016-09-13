@@ -25,7 +25,7 @@ block content
           .col
             span
               i.fa.fa-comment
-              span.ml-1 #{user.commentTotal} #{__('comments')}
+              span.ml-1 #{user.postTotal} #{__('posts')}
     .row.mt-30
       .col
         product-grid(class='', :per-row='3', :user-id=user.id)
@@ -50,6 +50,6 @@ block content
         .col.col-1-2.text-center
           span
             i.fa.fa-comment
-            span.ml-1 #{user.commentTotal} #{__('comments')}
+            span.ml-1 #{user.postTotal} #{__('posts')}
     .row
       product-grid(class='', :per-row='2', :user-id=user.id)

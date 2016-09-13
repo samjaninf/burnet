@@ -25,7 +25,12 @@ module.exports = function(sequelize) {
       defaultValue: ''
     }
   }, {
-    freezeTableName: true
+    freezeTableName: true,
+    classMethods: {
+      associate(models) {
+        product.hasMany(models.posts);
+      }
+    }
   });
 
   return product;

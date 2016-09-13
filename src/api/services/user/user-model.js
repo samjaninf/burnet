@@ -45,6 +45,7 @@ module.exports = function(sequelize) {
     classMethods: {
       associate(models) {
         user.hasMany(models.products);
+        user.hasMany(models.posts);
       }
     }
   });

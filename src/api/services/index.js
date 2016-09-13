@@ -1,6 +1,7 @@
 'use strict';
-const product = require('./product');
 const authentication = require('./authentication');
+const product = require('./product');
+const post = require('./post');
 const user = require('./user');
 const Sequelize = require('sequelize');
 
@@ -16,6 +17,7 @@ module.exports = function() {
   app.configure(authentication);
   app.configure(user);
   app.configure(product);
+  app.configure(post);
 
   // Setup relationships
   const models = sequelize.models;
