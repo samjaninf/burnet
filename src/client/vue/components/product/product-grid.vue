@@ -24,7 +24,6 @@
 
     data() {
       return {
-        message: 'Hello, Vue!',
         products: [],
         gridItemStyle: {}
       }
