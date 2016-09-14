@@ -1,6 +1,7 @@
 <template lang="pug">
-  button.btn.d-flex.jc-center(@click='togglePopover')
-    span {{ label }}
+  div.d-flex.jc-center
+    button.btn.mt-0(@click='togglePopover')
+      span {{ label }}
     popover(v-if='popoverActive')
       login-form(width='')
 </template>
