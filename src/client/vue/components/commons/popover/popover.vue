@@ -33,4 +33,10 @@ module.exports = {
 .popover-container {
   position: relative;
 }
+
+@media (max-width:768px) {
+  .popover {
+    right: 0;
+  }
+}
 </style>

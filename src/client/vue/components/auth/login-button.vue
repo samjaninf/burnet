@@ -1,7 +1,7 @@
 <template lang="pug">
-  button.btn.d-flex.jc-center
+  button.btn.d-flex.jc-center(@click='togglePopover')
     span {{ label }}
-    popover
+    popover(v-if='popoverActive')
       login-form(width='')
 </template>
 <script>
@@ -17,7 +17,15 @@ module.exports = {
   },
 
   data() {
-    return {}
+    return {
+      popoverActive: false
+    }
+  },
+
+  methods: {
+    togglePopover: function() {
+      this.popoverActive = !this.popoverActive;
+    }
   },
 
   components: {
