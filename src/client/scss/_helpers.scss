@@ -1,8 +1,19 @@
+// Flex helpers
+.d-flex {
+  display: flex;
+}
+.jc-center {
+  justify-content: center;
+}
 // Unit helpers
 $base-unit: 4px !default;
 $max-helper: 4;
 
 @for $i from 0 through $max-helper {
+  .p-#{$i} {
+    padding: $base-unit * $i;
+  }
+
   .mt-#{$i} {
     margin-top: $base-unit * $i;
   }
