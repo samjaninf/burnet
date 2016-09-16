@@ -59,5 +59,6 @@ block content
         h1 Atividade recente
         post-list(class='', name=user.name)
     .row
-      h1 Produtos
-      product-grid(class='', :per-row='2', :user-id=user.id)
+      .col
+        h1 Produtos
+        product-grid(class='', :per-row='2', :user-id=user.id)
