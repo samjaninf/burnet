@@ -3,20 +3,19 @@
 const chai = require('chai');
 chai.should();
 
-const errors = require('feathers-errors').errors;
 const globalHooks = require('../../../src/api/hooks');
 
 describe('Set Slug Hook', () => {
   it('should throw BadRequest if no name found in data', () => {
-    const setSlug = globalHooks.setSlug();
+    // const setSlug = globalHooks.setSlug();
 
-    let hook = {
-      data: {
-      }
-    };
+    // let hook = {
+    //   data: {
+    //   }
+    // };
 
-    //FIXME: throwing ReferenceError: Reflect is not defined
-    //setSlug.bind(this, hook).should.throw(errors.BadRequest);
+    // FIXME: throwing ReferenceError: Reflect is not defined
+    // setSlug.bind(this, hook).should.throw(errors.BadRequest);
   });
 
   it('should always generate a lowercase slug', () => {
