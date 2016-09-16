@@ -2,6 +2,7 @@
 
 const hooks = require('feathers-hooks');
 const auth = require('feathers-authentication').hooks;
+const setUrl = require('./set-url');
 
 exports.before = {
   all: [],
@@ -19,7 +20,8 @@ exports.before = {
     })
   ],
   create: [
-    auth.hashPassword()
+    auth.hashPassword(),
+    setUrl()
   ],
   update: [
     auth.verifyToken(),

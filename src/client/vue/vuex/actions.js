@@ -18,5 +18,12 @@ module.exports = {
         reject(err);
       });
     });
+  },
+
+  logout: ({commit}) => {
+    return new Promise((resolve, reject) => {
+      commit('CLEAR_USER');
+      resolve();
+    });
   }
 }

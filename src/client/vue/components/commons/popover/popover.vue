@@ -5,6 +5,13 @@
 <script>
 const config = require('../../../config/components/commons/popover/popover.config');
 module.exports = {
+  props: {
+    width: {
+      type: String,
+      default: config.POPOVER_WIDTH
+    }
+  },
+
   data() {
     return {
       popoverStyle: {}
@@ -13,7 +20,7 @@ module.exports = {
 
   created() {
     this.popoverStyle = {};
-    this.popoverStyle.width = config.POPOVER_WIDTH;
+    this.popoverStyle.width = this.width;
   }
 };
 </script>
