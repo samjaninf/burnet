@@ -1,7 +1,7 @@
 'use strict';
 
 const errors = require('feathers-errors').errors;
-const app = require('../../../../index.js');
+const app = require('../../../index.js');
 
 module.exports = options => {
   return hook => {
