@@ -1,4 +1,5 @@
 const Vue = require('vue');
+const Vuex = require('vuex');
 
 const productGrid = require('./components/product/product-grid.vue');
 const postList = require('./components/post/post-list.vue');
@@ -12,5 +13,6 @@ const store = require('./vuex/store');
 
 new Vue({
   el: '#vue-app',
-  store: store
+  store: store,
+  computed: Vuex.mapGetters(['user'])
 });

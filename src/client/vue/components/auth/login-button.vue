@@ -8,6 +8,7 @@
 <script>
 const popover = require('../commons/popover/popover.vue');
 const loginForm = require('./login-form.vue');
+const vuex = require('vuex');
 
 module.exports = {
   props: {
