@@ -55,7 +55,8 @@
     "sequelize": "^3.24.2",
     "serve-favicon": "^2.3.0",
     "slug": "^0.9.1",
-    "vue": "^2.0.0-rc.5",
+    "vue": "^2.0.0-rc.6",
+    "vuex": "^2.0.0-rc.5",
     "winston": "^2.2.0"
   },
   "devDependencies": {

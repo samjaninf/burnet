@@ -10,7 +10,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js'],
-    packageMains: ['webpack', 'browser', 'web', 'browserify', ['jam', 'main'], 'main']
+    packageMains: ['webpack', 'browser', 'web', 'browserify', ['jam', 'main'], 'main'],
+    alias: {
+      vue: 'vue/dist/vue.js'
+    }
   },
   plugins: [ ],
   externals: [ ]
