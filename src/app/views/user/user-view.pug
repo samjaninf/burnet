@@ -19,7 +19,6 @@ block content
             span
               i.fa.fa-gift
               span.ml-1 #{user.productTotal} #{__('products')}
-              a.link-blue.ml-1(href='javascript:void' v-if='user.token && user.handle === ' + '\'' + user.handle + '\'')= __('add')
         .row
           .col
             span
@@ -27,11 +26,16 @@ block content
               span.ml-1 #{user.postTotal} #{__('posts')}
     .row
       .col
-        h1 Atividade recente
+        h1= __('Posts')
         post-list(class='', name=user.name)
     .row
       .col
-        h1 Produtos
+        h1.d-ib
+          span= __('Products')
+        h5.d-ib(v-if='user.token && user.handle === ' + '\'' + user.handle + '\'')
+          a.ml-2(href="javascript:void")
+            i.fa.fa-plus-circle
+            span.ml-1 adicionar
         product-grid(class='', :per-row='3', :user-id=user.id)
   // Mobile
   .show-on-mobile
@@ -49,16 +53,20 @@ block content
           span
             i.fa.fa-gift
             span.ml-1 #{user.productTotal} #{__('products')}
-            a.link-blue.ml-1(href='javascript:void' v-if='user.token && user.handle === ' + '\'' + user.handle + '\'')= __('add')
         .col.col-1-2.text-center
           span
             i.fa.fa-comment
             span.ml-1 #{user.postTotal} #{__('posts')}
     .row.mt-30
       .col
-        h1 Atividade recente
+        h1= __('Posts')
         post-list(class='', name=user.name)
     .row
       .col
-        h1 Produtos
+        h1.d-ib
+          span= __('Products')
+        h5.d-ib(v-if='user.token && user.handle === ' + '\'' + user.handle + '\'')
+          a.ml-2(href="javascript:void")
+            i.fa.fa-plus-circle
+            span.ml-1 adicionar
         product-grid(class='', :per-row='2', :user-id=user.id)
