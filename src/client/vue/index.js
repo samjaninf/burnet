@@ -4,7 +4,7 @@ const Vuex = require('vuex');
 const productGrid = require('./components/product/product-grid.vue');
 const postList = require('./components/post/post-list.vue');
 const loginButton = require('./components/auth/login-button.vue');
-const userAvatar = require('./components/user/user-avatar.vue')
+const userAvatar = require('./components/user/user-avatar.vue');
 
 Vue.component('product-grid', productGrid);
 Vue.component('post-list', postList);

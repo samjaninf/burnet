@@ -16,11 +16,11 @@ module.exports = {
     });
   },
 
-  logout: ({commit}) => {
+  logout: state => {
     return new Promise((resolve, reject) => {
       app.logout();
-      commit('CLEAR_USER');
+      state.commit('CLEAR_USER');
       resolve();
     });
   }
-}
+};

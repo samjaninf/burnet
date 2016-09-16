@@ -1,3 +1,3 @@
 module.exports = {
-  user: (state) => state.user
-}
+  user: state => state.user
+};
