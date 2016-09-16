@@ -52,6 +52,10 @@ module.exports = {
   max-width: 40px;
   max-height: 40px;
   border-radius: 50%;
-  border-radius: 8px;
+  cursor: pointer;
+
+  img {
+    border-radius: 4px;
+  }
 }
 </style>

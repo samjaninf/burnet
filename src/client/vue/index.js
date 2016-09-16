@@ -13,6 +13,8 @@ Vue.component('user-avatar', userAvatar);
 
 const store = require('./vuex/store');
 
+store.dispatch('login');
+
 new Vue({
   el: '#vue-app',
   store: store,

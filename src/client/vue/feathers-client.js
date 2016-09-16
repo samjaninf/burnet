@@ -10,6 +10,6 @@ const socket = io(CONSTANTS.SERVER);
 const app = feathers()
   .configure(hooks())
   .configure(socketio(socket))
-  .configure(authentication());
+  .configure(authentication({storage: window.localStorage}));
 
 module.exports = app;
