@@ -22,6 +22,7 @@ i18n.configure({
 app.use(i18n.init);
 app.use('/static', express.static(path.join(__dirname, '../../static')));
 
+require('./views/product/product-view')(app, api);
 require('./views/user/user-view')(app, api);
 require('./views/home/home')(app, api);
 

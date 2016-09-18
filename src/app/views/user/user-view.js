@@ -3,7 +3,7 @@ module.exports = (app, api) => {
   app.get('/*', (req, res, next) => {
     if (req.path.includes('/api/'))
       return next();
-    // loads a user with given handle
+    // loads a user with given handle, striping away first character (slash)
     const handle = req.path.substring(1);
     api.service('users').find({
       query: {
