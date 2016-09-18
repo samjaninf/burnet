@@ -8,7 +8,8 @@ module.exports = options => {
     if (!hook.data.handle)
       throw new errors.BadRequest();
 
-    const url = app.get('host') + app.get('port') + '/' + hook.data.handle;
+    const url = `${hook.app.get('protocol')}://${hook.app.get('host')}:${hook.app.get('port')}` +
+                `/${hook.params.user.handle}`;
 
     hook.data = Object.assign({}, hook.data, {url});
   };

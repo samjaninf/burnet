@@ -1,6 +1,6 @@
 <template lang="pug">
   .product-grid
-    product-grid-item(v-for='product in products', :name='product.name', :image='product.image', :style='gridItemStyle')
+    product-grid-item(v-for='product in products', :name='product.name', :image='product.image', :url='product.url', :style='gridItemStyle')
 </template>
 <script>
   const app = require('../../feathers-client');

@@ -1,6 +1,7 @@
 {
   "host": "localhost",
   "port": 3030,
+  "protocol": "http",
   "nedb": "../data/",
   "mysql": "mysql://root:@localhost:3306/burnet",
   "public": "../public/",

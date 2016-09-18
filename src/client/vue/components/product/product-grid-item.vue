@@ -1,5 +1,5 @@
 <template lang="pug">
-  .product-grid-item
+  a.product-grid-item(class='', :href='url')
     figure
       img(class='', :src='image')
     figcaption.text-center {{name}}
@@ -14,6 +14,11 @@
       },
 
       name: {
+        type: String,
+        required: true
+      },
+
+      url: {
         type: String,
         required: true
       }

@@ -1,6 +1,7 @@
 {
   "host": "burnet-app.feathersjs.com",
   "port": 80,
+  "protocol": "https",
   "nedb": "NEDB_BASE_PATH",
   "public": "../public/",
   "auth": {

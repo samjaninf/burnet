@@ -7,13 +7,13 @@ html
       .container#vue-app
         header.row.mt-15
           .col.col-1-3.hide-on-mobile
-            img(src='static/img/logo.png')
+            img(src='/static/img/logo.png')
           .col.col-2-3.show-on-mobile
-            img(src='static/img/logo.png')
+            img(src='/static/img/logo.png')
           .col.col-1-3.hide-on-mobile
           .col.col-1-3.flex-middle.flex-right
             login-button.mt-0(class='', label=__('Sign In'), v-if='!user.token')
             user-avatar(v-if='user.image', :url='user.image')
         div
           block content
-    script(src='dist/bundle.js')
+    script(src='/dist/bundle.js')
