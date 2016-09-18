@@ -2,6 +2,7 @@
 
 const globalHooks = require('../../../hooks');
 const auth = require('feathers-authentication').hooks;
+const setUrl = require('./set-url');
 
 exports.before = {
   all: [],
@@ -12,7 +13,8 @@ exports.before = {
     auth.populateUser(),
     auth.restrictToAuthenticated(),
     globalHooks.setUserId(),
-    globalHooks.setSlug()
+    globalHooks.setSlug(),
+    setUrl()
   ],
   update: [],
   patch: [],

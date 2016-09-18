@@ -3,6 +3,7 @@
 const hooks = require('feathers-hooks');
 const auth = require('feathers-authentication').hooks;
 const setUrl = require('./set-url');
+const handleToLowerCase = require('./handle-to-lower-case');
 
 exports.before = {
   all: [],
@@ -21,7 +22,8 @@ exports.before = {
   ],
   create: [
     auth.hashPassword(),
-    setUrl()
+    setUrl(),
+    handleToLowerCase()
   ],
   update: [
     auth.verifyToken(),
@@ -29,7 +31,8 @@ exports.before = {
     auth.restrictToAuthenticated(),
     auth.restrictToOwner({
       ownerField: 'id'
-    })
+    }),
+    handleToLowerCase()
   ],
   patch: [
     auth.verifyToken(),

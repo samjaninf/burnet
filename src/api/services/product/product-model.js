@@ -12,6 +12,10 @@ module.exports = function(sequelize) {
       type: Sequelize.STRING,
       allowNull: false
     },
+    url: {
+      type: Sequelize.STRING(512),
+      allowNull: false
+    },
     image: {
       type: Sequelize.STRING,
       allowNull: false
