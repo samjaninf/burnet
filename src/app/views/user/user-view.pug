@@ -27,7 +27,7 @@ block content
     .row
       .col
         h1= __('Posts')
-        post-list(class='', name=user.name)
+        post-list(class='', name=user.name, :user-id=user.id)
     .row
       .col
         h1.d-ib
@@ -60,7 +60,7 @@ block content
     .row.mt-30
       .col
         h1= __('Posts')
-        post-list(class='', name=user.name)
+        post-list(class='', name=user.name, :user-id=user.id)
     .row
       .col
         h1.d-ib

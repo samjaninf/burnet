@@ -14,6 +14,12 @@ module.exports = {
     name: {
       type: String,
       required: true
+    },
+    userId: {
+      type: Number
+    },
+    productId: {
+      type: Number
     }
   },
 
@@ -28,10 +34,11 @@ module.exports = {
   },
 
   created() {
+    const query = {};
+    if (this.userId) query.userId = this.userId;
+    if (this.productId) query.productId = this.productId;
     postService.find({
-      query: {
-
-      }
+      query
     })
     .then(resp => {
       this.posts = resp.data;
