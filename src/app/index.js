@@ -22,6 +22,18 @@ i18n.configure({
 app.use(i18n.init);
 app.use('/static', express.static(path.join(__dirname, '../../static')));
 
+app.locals.moment = require('moment');
+app.locals.numeral = require('numeral');
+
+// Loads supported languages
+var supportedLngs = ['en', 'pt-BR'];
+
+supportedLngs.forEach(function(lng){
+  if( lng === 'en' ) return;
+  var obj = require('numeral/languages/'+lng.toLowerCase());
+  require('numeral').language(lng, obj);
+});
+
 require('./views/product/product-view')(app, api);
 require('./views/user/user-view')(app, api);
 require('./views/home/home')(app, api);

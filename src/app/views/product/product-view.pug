@@ -1,4 +1,34 @@
 extends ../layout.pug
 
 block content
-  div You're seeing the details for #{product.name}
+  section.row.mt-30
+    .col.col-1-2
+      a(href='javascript:void')
+        img(src=product.image)
+    .col.col-1-2
+      .row
+        .col.col-1-2
+          a(href='javascript:void')
+            img(src=product.image)
+        .col.col-1-2
+          a(href='javascript:void')
+            img(src=product.image)
+      .row.mt-13
+        .col.col-1-2
+          a(href='javascript:void')
+            img(src=product.image)
+        .col.col-1-2
+          a(href='javascript:void')
+            img(src=product.image)
+  section.row
+    .col
+      h1= product.name
+      h5.mt-0
+        span= product.price
+  section.row
+    .col
+      p= product.description
+  section.row.mt-15
+    .col
+      user-avatar(class='', url=product.user.image)
+      a.ml-2(href=product.user.url)= product.user.handle

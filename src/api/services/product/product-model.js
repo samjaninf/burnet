@@ -27,6 +27,10 @@ module.exports = function(sequelize) {
     description: {
       type: Sequelize.STRING(1024),
       defaultValue: ''
+    },
+    price: {
+      type: Sequelize.REAL,
+      allowNull: false
     }
   }, {
     freezeTableName: true,
