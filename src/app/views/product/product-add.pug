@@ -1,0 +1,27 @@
+extends ../layout.pug
+
+block content
+  section.row
+    .col
+      h1 Cadastrar novo produto
+  form.form
+    .row
+      label.col.col-1-4.text-right(for='name') Nome:
+      .col.col-3-4
+        input(type='text' id='name' placeholder='Nome do produto')
+    .row
+      label.col.col-1-4.text-right(for='image') Imagem:
+      .col.col-3-4
+        input(type='file' id='image')
+    .row
+      label.col.col-1-4.text-right(for='value') Valor:
+      .col.col-3-4
+        input(type='number' id='value' placeholder='Preço do produto (em reais)')
+    .row
+      label.col.col-1-4.text-right(for='name') Descrição:
+      .col.col-3-4
+        textarea(placeholder='Descrição do produto')
+    .row
+      .col.col-1-4
+      .col.col-3-4
+        button.btn-primary(type='submit') Salvar

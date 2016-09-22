@@ -34,6 +34,7 @@ supportedLngs.forEach(function(lng){
   require('numeral').language(lng, obj);
 });
 
+require('./views/product/product-add')(app, api);
 require('./views/product/product-view')(app, api);
 require('./views/user/user-view')(app, api);
 require('./views/home/home')(app, api);
